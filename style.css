@@ -1,5 +1,7 @@
 #twidContainer {
 	font-family: helvetica;
+	z-index: 10;
+	position: relative;
 }
 
 #twidContainer div:nth-child(odd) {
@@ -13,7 +15,9 @@
 
 .twid {
 	padding-top: 10px;
-	padding-bottom: 5px;
+	padding-bottom: 8px;
+	z-index: 999999;
+	position: relative;
 
 }
 
@@ -26,4 +30,24 @@ body {
 small {
 	display: block;
 	font-size: 9px;
+}
+
+.shawndrost {
+
+}
+
+.sharksforcheap {
+
+}
+
+.mracus {
+
+}
+
+.douglascalhoun {
+	
+}
+
+.hidden {
+	display: none;
 }

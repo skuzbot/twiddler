@@ -13,8 +13,9 @@
     </header>
     <section class="newTwids">
       <button id="stop">Stop</button>
+      <!-- <button id="show-all">Show All Users</button> -->
     </section>
-    <section id="twidContainer"></section>
+   	<section id="twidContainer"></section>
 
     <script>
 
@@ -27,21 +28,21 @@
 
         function getNewTwid(index) {
             var tweet = streams.home[index];
-            var $tweet = $('<div class="twid"></div>');
+            var $tweet = $('<div class="twid" style="cursor: pointer" onclick="window.location="timeline.html";"></div>');
             var time = tweet.created_at;
             var $time = $('<small class="time"></small>');
             $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $tweet.addClass(tweet.user);
             $time.text('submitted at ' + time);
             $tweet.prependTo($twidContainer);
             $time.appendTo($tweet);
-            index++;
         };
-        
+
+
       
         var start = setInterval(function() {
-            for (i = 0; i < streams.home.length; i++) {
-              getNewTwid(i);
-            };
+            getNewTwid(i);
+            i++;
           }, 500);
          
         //start();
@@ -51,6 +52,12 @@
         function stop() { 
           clearInterval(start);
         };
+
+
+        //users: shawndrost, sharksforcheap, mracus, douglascalhoun
+        //hide function
+
+
         
       });
 

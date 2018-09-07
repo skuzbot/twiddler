@@ -1,12 +1,10 @@
-#twidContainer {
+.twidContainer {
 	font-family: helvetica;
-	z-index: 10;
 	position: relative;
+	background-color: hsla(73, 100%, 85%, 1);
+
 }
 
-#twidContainer div:nth-child(odd) {
-	background-color: hsla(73, 100%, 85%, 1);
-}
 
 .title {
 	font-family: helvetica;
@@ -14,11 +12,24 @@
 }
 
 .twid {
-	padding-top: 10px;
-	padding-bottom: 8px;
-	z-index: 999999;
+	padding-top: 8px;
+	padding-bottom: 5px;
 	position: relative;
+	font-family: helvetica;
+	
 
+}
+
+.tweet-button {
+	background: none;
+    color: inherit;
+    border: 2px solid white;
+    padding: 10px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-align: left;
+    width: 100%;
 }
 
 body {
@@ -32,22 +43,9 @@ small {
 	font-size: 9px;
 }
 
-.shawndrost {
-
-}
-
-.sharksforcheap {
-
-}
-
-.mracus {
-
-}
-
-.douglascalhoun {
-	
-}
-
-.hidden {
-	display: none;
+a {
+	display: block;
+	text-decoration: none;
+	color: black;
+	font-family: helvetica;
 }

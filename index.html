@@ -12,7 +12,7 @@
       <h1 class="title">Twidder</h1>
     </header>
     <section class="newTwids">
-      
+      <button id="stop">Stop</button>
     </section>
     <section id="twidContainer"></section>
 
@@ -33,14 +33,25 @@
             index++;
         };
         
-        setInterval(function() {
-          for (i = 0; i < streams.home.length; i++) {
-            getNewTwid(i);
-          };
-        }, 500);
+      
+        var start = setInterval(function() {
+            for (i = 0; i < streams.home.length; i++) {
+              getNewTwid(i);
+            };
+          }, 500);
+         
+        //start();
+
+        var stopButton = document.getElementById("stop");
+        stopButton.onclick = stop;
+        function stop() { 
+          clearInterval(start);
+        };
         
       });
 
     </script>
   </body>
 </html>
+
+

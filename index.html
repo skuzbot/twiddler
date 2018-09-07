@@ -8,13 +8,17 @@
   </head>
 
   <body>
+
     <header>
       <h1 class="title">Twidder</h1>
     </header>
+
     <section class="newTwids">
-      <button id="stop">Stop</button>
+    	<button id="newTwids">Check for new Twids</button>
+      <!-- <button id="stop">Stop</button> -->
       <button id="show-all">Show All Users</button>
     </section>
+
    	<div class="twidContainer"></div>
 
 	    <script>
@@ -23,57 +27,79 @@
 	        var $body = $('body');
 	        var $newTwids = $('.newTwids');
 	        var $twidContainer = $('.twidContainer');
-	        //$body.html('');
-	       
+	        window.i = 1;
+	        window.totalTwids = streams.home.length;
+	        
 
+	        //recieves new twids from data_gen
 	        function getNewTwid(index) {
-	            var tweet = streams.home[index];
-	            var $tweet = $('<button class="tweet-button twid"></button>');
-	            var time = tweet.created_at;
-	            var $time = $('<small class="time"></small>');
-	            $tweet.text('@' + tweet.user + ': ' + tweet.message);
-	            $tweet.addClass(tweet.user);
-	            $time.text('submitted at ' + time);
-	            $tweet.prependTo($twidContainer);
-	            $time.appendTo($tweet);
+            var tweet = streams.home[index];
+            var $tweet = $('<button class="tweet-button twid"></button>');
+            var time = tweet.created_at;
+            var $time = $('<small class="time"></small>');
+            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $tweet.addClass(tweet.user);
+            $time.text('submitted at ' + time);
+            $tweet.prependTo($twidContainer);
+            $time.appendTo($tweet);
+            window.i++;
+            
+            console.log(i);
 	        };
 
-		      //users: shawndrost, sharksforcheap, mracus, douglascalhoun
-		      //hide function
+		      
+		      //hide non-matching users functions
+
+		      //user: shawndrost
 		      $('.twidContainer').on('click', '.shawndrost', function() {
 		    		$(this).siblings().filter(':not(.shawndrost)').hide();
+		    		clearInterval(start);
 		      });
 
+
+
+		      //user: sharksforcheap
 		      $('.twidContainer').on('click', '.sharksforcheap', function() {
 		    		$(this).siblings().filter(':not(.sharksforcheap)').hide();
+		    		clearInterval(start);
 		      });
 
+		      //user: mracus
 		      $('.twidContainer').on('click', '.mracus', function() {
 		    		$(this).siblings().filter(':not(.mracus)').hide();
+		    		clearInterval(start);
 		      });
 
+		      //user: douglascalhoun
 		      $('.twidContainer').on('click', '.douglascalhoun', function() {
 		    		$(this).siblings().filter(':not(.douglascalhoun)').hide();
+		    		clearInterval(start);
 		      });
 
 
-
-
-	        window.i = 0;
-	      
-	        var start = setInterval(function() {
-
-	            getNewTwid(i);
-	            i++;
-	          }, 500);
-	         
-	        //start();
-
-	        var stopButton = document.getElementById("stop");
-	        stopButton.onclick = stop;
-	        function stop() { 
-	          clearInterval(start);
+		      //
+	        // var start = setInterval(function() {
+	        //     getNewTwid(i);
+	        //  }, 500);
+		   
+	        var checkButton =document.getElementById("newTwids");
+	        checkButton.onclick = startNew;
+	        function startNew() {
+	        	$('.twid').show();
+	        	var diff = streams.home.length - i;
+						for(j = diff; j < streams.home.length; j++)	{
+							if (streams.home.length > i) {
+								getNewTwid(j);
+							}
+							
+						}      	
 	        }
+
+	        // var stopButton = document.getElementById("stop");
+	        // stopButton.onclick = stop;
+	        // function stop() { 
+	        //   clearInterval(start);
+	        // }
 
 	        var showButton = document.getElementById("show-all");
 	        showButton.onclick = showAll;
@@ -81,18 +107,7 @@
 	        	$('.twid').show();
 	        }
 
-
-
-
-
-	        
 	      });
-
-	      var tweetButton = document.getElementsByClassName("tweet-button");
-	      tweetButton.onclick = tweetButtonFunction;
-	      function tweetButtonFunction() {
-	       	alert('hello');
-	      }
 
 	    </script>
     

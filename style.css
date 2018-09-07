@@ -1,0 +1,24 @@
+#twidContainer {
+	font-family: helvetica;
+}
+
+#twidContainer div:nth-child(odd) {
+	background-color: hsla(73, 100%, 85%, 1);
+}
+
+.title {
+	font-family: helvetica;
+	text-align: center;
+}
+
+.twid {
+	padding-top: 10px;
+	padding-bottom: 5px;
+
+}
+
+body {
+    width:60%;
+    margin-left:100px;
+    margin-right:auto;
+}

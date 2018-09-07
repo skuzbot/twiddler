@@ -28,8 +28,12 @@
         function getNewTwid(index) {
             var tweet = streams.home[index];
             var $tweet = $('<div class="twid"></div>');
+            var time = tweet.created_at;
+            var $time = $('<small class="time"></small>');
             $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $time.text('submitted at ' + time);
             $tweet.prependTo($twidContainer);
+            $time.appendTo($tweet);
             index++;
         };
         

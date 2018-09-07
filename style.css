@@ -22,3 +22,8 @@ body {
     margin-left:100px;
     margin-right:auto;
 }
+
+small {
+	display: block;
+	font-size: 9px;
+}

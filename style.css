@@ -1,3 +1,10 @@
+#newTwids {
+	font-family: helvetica;
+	position: center;
+	background-color: hsla(73, 100%, 85%, .5);
+	outline: thin dotted;
+}
+
 .twidContainer {
 	font-family: helvetica;
 	position: center;

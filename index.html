@@ -51,25 +51,25 @@
 
 		      //user: shawndrost
 		      $('.twidContainer').on('click', '.shawndrost', function() {
-		    		$(this).siblings().filter(':not(.shawndrost)').slideToggle(1000);
+		    		$(this).siblings().filter(':not(.shawndrost)').slideToggle(100);
 		    		clearInterval(start);
 		      });
 
 		      //user: sharksforcheap
 		      $('.twidContainer').on('click', '.sharksforcheap', function() {
-		    		$(this).siblings().filter(':not(.sharksforcheap)').slideToggle(1000);
+		    		$(this).siblings().filter(':not(.sharksforcheap)').slideToggle(100);
 		    		clearInterval(start);
 		      });
 
 		      //user: mracus
 		      $('.twidContainer').on('click', '.mracus', function() {
-		    		$(this).siblings().filter(':not(.mracus)').slideToggle(1000);
+		    		$(this).siblings().filter(':not(.mracus)').slideToggle(100);
 		    		clearInterval(start);
 		      });
 
 		      //user: douglascalhoun
 		      $('.twidContainer').on('click', '.douglascalhoun', function() {
-		    		$(this).siblings().filter(':not(.douglascalhoun)').slideToggle(1000);
+		    		$(this).siblings().filter(':not(.douglascalhoun)').slideToggle(100);
 		    		clearInterval(start);
 		      });
 
@@ -84,12 +84,12 @@
 	        function startNew() {
 	        	$('.twid').show();
 	        	var diff = streams.home.length - i;
-						for(j = diff; j < streams.home.length; j++)	{
-							if (streams.home.length >= i) {
-								getNewTwid(j);
-							}
-							
-						}      	
+				for(j = i; j < streams.home.length; j++)	{
+					if (streams.home.length >= i) {
+						getNewTwid(j);
+					}
+					
+				}      	
 	        }
 
 	        // var stopButton = document.getElementById("stop");

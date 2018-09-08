@@ -15,13 +15,12 @@
 
     <section class="newTwids">
     	<button id="newTwids">Check for new Twids</button>
-      <!-- <button id="stop">Stop</button> -->
+      <!-- <button id="stop">Stop</button> button for stopping autoload-->
     </section>
 
    	<div class="twidContainer"></div>
 
 	    <script>
-
 	      $(document).ready(function(){
 	        var $body = $('body');
 	        var $newTwids = $('.newTwids');
@@ -42,8 +41,6 @@
             $tweet.prependTo($twidContainer);
             $time.appendTo($tweet);
             window.i++;
-            
-            console.log(i);
 	        };
 
 		      
@@ -52,45 +49,40 @@
 		      //user: shawndrost
 		      $('.twidContainer').on('click', '.shawndrost', function() {
 		    		$(this).siblings().filter(':not(.shawndrost)').slideToggle(100);
-		    		clearInterval(start);
 		      });
 
 		      //user: sharksforcheap
 		      $('.twidContainer').on('click', '.sharksforcheap', function() {
 		    		$(this).siblings().filter(':not(.sharksforcheap)').slideToggle(100);
-		    		clearInterval(start);
 		      });
 
 		      //user: mracus
 		      $('.twidContainer').on('click', '.mracus', function() {
 		    		$(this).siblings().filter(':not(.mracus)').slideToggle(100);
-		    		clearInterval(start);
 		      });
 
 		      //user: douglascalhoun
 		      $('.twidContainer').on('click', '.douglascalhoun', function() {
 		    		$(this).siblings().filter(':not(.douglascalhoun)').slideToggle(100);
-		    		clearInterval(start);
 		      });
 
 
-		      //
-	        // var start = setInterval(function() {
-	        //     getNewTwid(i);
-	        //  }, 500);
-		   
 	        var checkButton =document.getElementById("newTwids");
 	        checkButton.onclick = startNew;
 	        function startNew() {
 	        	$('.twid').show();
-	        	var diff = streams.home.length - i;
-				for(j = i; j < streams.home.length; j++)	{
-					if (streams.home.length >= i) {
-						getNewTwid(j);
-					}
-					
-				}      	
+						for(j = i; j < streams.home.length; j++)	{
+							if (streams.home.length > i) {
+								getNewTwid(j);
+							}
+						}      	
 	        }
+
+
+	        //auto-refresh new tweets - need to add a clearInterval to check button if used.
+	        // var start = setInterval(function() {
+	        //     getNewTwid(i);
+	        //  }, 500);
 
 	        // var stopButton = document.getElementById("stop");
 	        // stopButton.onclick = stop;
@@ -101,7 +93,6 @@
 	      });
 
 	    </script>
-    
   </body>
 </html>
 

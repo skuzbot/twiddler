@@ -1,41 +1,41 @@
 .twidContainer {
 	font-family: helvetica;
-	position: relative;
-	background-color: hsla(73, 100%, 85%, 1);
-
+	position: center;
+	background-color: hsla(73, 100%, 85%, .5);
 }
-
 
 .title {
 	font-family: helvetica;
-	text-align: center;
+	text-align: right;
+	text-transform: lowercase;
+
 }
 
 .twid {
-	padding-top: 8px;
-	padding-bottom: 5px;
 	position: relative;
 	font-family: helvetica;
-	
-
+	margin-top: 15px;
+	background-color: hsla(73, 100%, 85%, 1);
 }
 
 .tweet-button {
-	background: none;
+	background: inherit;
     color: inherit;
-    border: 2px solid white;
+    border: none;
     padding: 10px;
     font: inherit;
     cursor: pointer;
     outline: inherit;
     text-align: left;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 body {
     width:60%;
-    margin-left:100px;
+    margin-left:auto;
     margin-right:auto;
+    background-color: hsla(70, 0%, 25%, .25) ; 
 }
 
 small {
@@ -43,9 +43,3 @@ small {
 	font-size: 9px;
 }
 
-a {
-	display: block;
-	text-decoration: none;
-	color: black;
-	font-family: helvetica;
-}
